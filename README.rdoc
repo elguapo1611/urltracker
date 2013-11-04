@@ -1,3 +1,10 @@
 == URL Tracker
 
 A simple app for tracking content changes within dom elements and web pages.
+
+== Things that need to change:
+- URLs should be crawled with typheous hydra.  Currently the app crawls one url at a time
+- Tests!!!!!
+- Simple crud for the dom selectors
+- Bookmarklet for selecting dom elements for non-engineers
+- Google apps auth for allowing employee login
