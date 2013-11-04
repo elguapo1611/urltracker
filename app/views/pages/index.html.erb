@@ -1,0 +1,30 @@
+<div class="col-md-12 container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th width="200">URL</th>
+        <th>Created</th>
+        <th>Dom Selectors</th>
+        <th>Last Change</th>
+        <th>Crawl Page</th>
+        <th width="200">actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @pages.each do |page| %>
+        <tr>
+          <td><%= page.url %></td>
+          <td><%= page.created_at %></td>
+          <td><%= page.dom_selectors_to_s %></td>
+          <td><%= page.crawls.last.try(:created_at) || "na" %></td>
+          <td><%= link_to "run now!", run_page_path(page) %></td>
+          <td> 
+            <%= link_to "details", page_path(page) %> | 
+            <%= link_to "edit", edit_page_path(page) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @pages %>
+</div>

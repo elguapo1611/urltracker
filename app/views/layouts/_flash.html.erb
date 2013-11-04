@@ -1,0 +1,7 @@
+<% unless flash.nil? %>
+  <% flash.each do |type, msg| %>
+    <div class="alert alert-<%= type %>">
+      <%= h(msg) %>
+    </div>
+  <% end %>
+<% end %>

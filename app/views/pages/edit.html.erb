@@ -1,0 +1,14 @@
+<%= form_for @page do |page_form| %>
+  <div class="form-group">
+    <%= page_form.text_field :url, :class => "form-control", :placeholder => "url eg...http://google.com" %>
+  </div>
+  <div class="form-group">
+    <textarea name="dom_elements" class="form-control">
+      <%= @page.dom_selectors_to_s %>
+    </textarea>
+    <em>comma separated dom selectors</em>
+  </div>
+  <div class="form-group">
+    <%= page_form.submit :class => "btn btn-block btn-lg btn-primary" %>
+  </div>
+<% end %>
